@@ -38,12 +38,12 @@ const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
 let pochita_mesh = new THREE.Mesh(geometry, material);
 const pochita_loader = new STLLoader();
 pochita_loader.load(
-  'assets/3d_models/pochita_resin.stl',
+  'assets/3d_models/Brasil_inteiro.stl',
   function(pochita_geometry) {
     pochita_mesh = new THREE.Mesh(pochita_geometry, material);
-    const sizes = {"x": 10, "y": 10, "z": -30};
+    const sizes = {"x": -120, "y": -60, "z": -60};
     pochita_mesh.position.set(sizes.x, sizes.y, sizes.z);
-    pochita_mesh.scale.set(0.5,0.5,0.5);
+    pochita_mesh.scale.set(0.25,0.25,0.25);
     // pochita_mesh.rotateX(-20);
     scene.add(pochita_mesh);
   },
@@ -91,12 +91,12 @@ Array(300).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('./assets/image_files/pattern_blue.jpg');
+const spaceTexture = new THREE.TextureLoader().load('./assets/image_files/pattern_blue.jpeg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const portraitTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_green.jpg');
+const portraitTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_green.jpeg');
 
 const portrait = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: portraitTexture }));
 
@@ -104,8 +104,8 @@ scene.add(portrait);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpg');
-const normalTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpg');
+const moonTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpeg');
+const normalTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpeg');
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -147,7 +147,7 @@ moveCamera();
 function animate() {
   requestAnimationFrame(animate);
 
-  pochita_mesh.rotation.x += 0.1;
+  pochita_mesh.rotation.y += 0.01;
 
   // torus.rotation.x += 0.01;
   // torus.rotation.y += 0.005;
