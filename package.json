@@ -1,0 +1,20 @@
+{
+  "name": "three-demo",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite dist/",
+    "build": "vite build dist/",
+    "serve": "vite preview dist/",
+    "deploy": "gh-pages -d dist/"
+  },
+  "devDependencies": {
+    "vite": "^2.3.0"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "three": "^0.128.0"
+  },
+  "main": "index.js",
+  "author": "gabrielsouza95 <alves95gabriel@gmail.com>",
+  "license": "MIT"
+}
