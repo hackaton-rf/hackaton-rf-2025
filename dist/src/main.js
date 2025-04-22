@@ -1,6 +1,7 @@
 import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
 import { STLLoader } from 'https://unpkg.com/three@0.127.0/examples/jsm/loaders/STLLoader.js'
 import { NavBarControl } from './NavBarControl.js';
+import { TypingEffect } from './TypingEffect.js';
 
 // Navbar
 //create navbar controls
@@ -143,6 +144,13 @@ document.body.onscroll = moveCamera;
 moveCamera();
 
 // Animation Loop
+
+const headerText = "Preparado para inovar junto com a Receita Federal?";
+const typingSpeed = 60;
+const textPauseTimeOffset = 25;
+const elementId = "header_text";
+const headerTypingEffect = new TypingEffect(elementId, headerText, typingSpeed, textPauseTimeOffset, document, window);
+headerTypingEffect.typeWriter();
 
 function animate() {
   requestAnimationFrame(animate);
