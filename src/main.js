@@ -1,6 +1,7 @@
 import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
 import { STLLoader } from 'https://unpkg.com/three@0.127.0/examples/jsm/loaders/STLLoader.js'
 import { NavBarControl } from './NavBarControl.js';
+import { TypingEffect } from './TypingEffect.js';
 
 // Navbar
 //create navbar controls
@@ -91,12 +92,12 @@ Array(300).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('./assets/image_files/pattern_blue.jpeg');
+const spaceTexture = new THREE.TextureLoader().load('./assets/image_files/pattern_blue.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const portraitTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_green.jpeg');
+const portraitTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_green.jpg');
 
 const portrait = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: portraitTexture }));
 
@@ -104,8 +105,8 @@ scene.add(portrait);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpeg');
-const normalTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpeg');
+const moonTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpg');
+const normalTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpg');
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -143,6 +144,13 @@ document.body.onscroll = moveCamera;
 moveCamera();
 
 // Animation Loop
+
+const headerText = "Preparado para inovar junto com a Receita Federal?";
+const typingSpeed = 60;
+const textPauseTimeOffset = 25;
+const elementId = "header_text";
+const headerTypingEffect = new TypingEffect(elementId, headerText, typingSpeed, textPauseTimeOffset, document, window);
+headerTypingEffect.typeWriter();
 
 function animate() {
   requestAnimationFrame(animate);
