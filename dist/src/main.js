@@ -145,7 +145,7 @@ moveCamera();
 
 // Animation Loop
 
-const headerText = "Preparado para inovar junto com a Receita Federal?";
+const headerText = "Preparado(a) para transformar mercadorias apreendidas em soluções escaláveis?";
 const typingSpeed = 60;
 const textPauseTimeOffset = 25;
 const elementId = "header_text";
