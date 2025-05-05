@@ -92,8 +92,9 @@ Array(300).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('./assets/image_files/pattern_blue.jpg');
-scene.background = spaceTexture;
+//const spaceTexture = new THREE.TextureLoader().load('./assets/image_files/pattern_blue.jpg');
+const color_bg = new THREE.Color().setHex( 0x071D42 );
+scene.background = color_bg;
 
 // Avatar
 
