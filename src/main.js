@@ -98,7 +98,7 @@ scene.background = color_bg;
 
 // Avatar
 
-const portraitTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_green.jpg');
+const portraitTexture = new THREE.TextureLoader().load('./assets/image_files/logo.jpg');
 
 const portrait = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: portraitTexture }));
 
@@ -106,17 +106,17 @@ scene.add(portrait);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpg');
-const normalTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpg');
+const moonTexture = new THREE.TextureLoader().load('./assets/image_files/pattern_blue.jpg');
+// const normalTexture = new THREE.TextureLoader().load('./assets/image_files/text_box_blue.jpg');
 
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: moonTexture,
-    normalMap: normalTexture,
-  })
-);
-
+// const moon = new THREE.Mesh(
+//   new THREE.SphereGeometry(3, 32, 32),
+//   new THREE.MeshStandardMaterial({
+//     map: moonTexture,
+//     normalMap: normalTexture,
+//   })
+// );
+const moon = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: moonTexture }));
 scene.add(moon);
 
 moon.position.z = 30;
