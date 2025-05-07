@@ -147,10 +147,11 @@ moveCamera();
 // Animation Loop
 
 const headerText = "Preparado(a) para transformar mercadorias apreendidas em soluções escaláveis?";
+const baseString = "                                                                             "
 const typingSpeed = 60;
 const textPauseTimeOffset = 25;
 const elementId = "header_text";
-const headerTypingEffect = new TypingEffect(elementId, headerText, typingSpeed, textPauseTimeOffset, document, window);
+const headerTypingEffect = new TypingEffect(elementId, headerText, baseString, typingSpeed, textPauseTimeOffset, document, window);
 headerTypingEffect.typeWriter();
 
 function animate() {
